@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS profiles (user_id INTEGER PRIMARY KEY, username VARCHAR(50) UNIQUE NOT NULL, avatar TEXT, bio TEXT, created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW());
+CREATE TABLE IF NOT EXISTS subscriptions (follower_id INTEGER NOT NULL REFERENCES profiles(user_id) ON DELETE CASCADE, following_id INTEGER NOT NULL REFERENCES profiles(user_id) ON DELETE CASCADE, created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), PRIMARY KEY(follower_id,following_id), CHECK(follower_id<>following_id));
