@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="bg-blue-100 min-h-screen">
+
+    <!-- Хеадер -->
+
+    <header class="bg-white shadow">
+
+        <div class="flex gap-2">
+
+
+
+</div>
+
+        <div class="max-w-4xl mx-auto p-4 flex justify-between items-center">
+
+            <h1 class="text-2xl font-bold">
+                A-Network
+            </h1>
+<input
+        type="text"
+        id="searchInput"
+        placeholder="Поиск пользователей..."
+        class="border rounded-lg px-3 py-2"
+    >
+
+    <button
+        id="searchBtn"
+        class="bg-blue-500 text-white px-4 rounded-lg"
+    >
+        🔍
+    </button>
+
+            <button
+                id="logoutBtn"
+                class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
+            >
+                Выйти
+            </button>
+
+        </div>
+
+    </header>
+
+    
+    <!-- Профиль -->
+
+    <main class="max-w-4xl mx-auto mt-10">
+
+                <!-- Результаты поиска -->
+
+<div
+    id="searchResults"
+    class="bg-white rounded-2xl shadow p-6 mt-6 hidden"
+>
+
+    <h3 class="text-xl font-bold mb-4">
+        Результаты поиска
+    </h3>
+
+</div>
+
+        <div class="bg-white rounded-2xl shadow p-6">
+
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+
+                <!-- Аватарка -->
+
+                <img
+    id="avatarImage"
+    src="https://placehold.co/150"
+    alt="avatar"
+    class="w-36 h-36 rounded-full object-cover border"
+>
+
+<input
+    type="file"
+    id="avatarInput"
+    class="mt-4"
+>
+
+                <!-- Информация об пользователе -->
+
+                <div>
+
+                    <h2
+                        id="username"
+                        class="text-3xl font-bold"
+                    >
+                        Username
+                    </h2>
+
+                    <p
+                        id="email"
+                        class="text-gray-600 mt-2"
+                    >
+                        email@example.com
+                    </p>
+
+                    <p
+    id="bioText"
+    class="text-gray-700 mt-2"
+>
+    Нет описания
+</p>
+
+<textarea
+    id="bioInput"
+    class="border rounded-lg p-2 mt-4 w-full"
+    rows="3"
+    placeholder="Расскажите о себе..."
+></textarea>
+
+<button
+    id="saveBioBtn"
+    class="bg-green-500 text-white px-4 py-2 rounded-lg mt-2"
+>
+    Сохранить описание
+</button>
+
+<div class="mt-4">
+
+    <input
+        id="newUsername"
+        type="text"
+        placeholder="Новое имя пользователя"
+        class="border rounded-lg p-2 w-full"
+    >
+
+    <button
+        id="changeUsernameBtn"
+        class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-2"
+    >
+        Изменить имя
+    </button>
+
+</div>
+
+
+                    <p class="mt-4 text-gray-700">
+                        Добро пожаловать в социальную сеть
+                    </p>
+
+                </div>
+
+                
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Создать пост -->
+
+        <div class="bg-white rounded-2xl shadow p-6 mt-6">
+
+            <h3 class="text-2xl font-bold mb-4">
+                Новый пост
+            </h3>
+
+            <textarea
+                id="postContent"
+                class="w-full border rounded-lg p-3"
+                rows="4"
+                placeholder="Что нового?"
+            ></textarea>
+
+            <button
+                id="createPostBtn"
+                class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg"
+            >
+                Опубликовать
+            </button>
+
+        </div>
+
+        <!-- Посты -->
+
+        <div
+            id="postsContainer"
+            class="mt-6 space-y-4"
+        >
+
+        </div>
+
+    </main>
+
+    <script src="./js/profile.js"></script>
+
+</body>
+<!-- <a href="https://youtu.be/dQw4w9WgXcQ?si=5DyFZiufPxUy-uYg">Свиридов Егор Александрович ©</a> -->
+</html>

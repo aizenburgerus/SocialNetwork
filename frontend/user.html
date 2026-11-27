@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пользователь</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="max-w-4xl mx-auto mt-10">
+
+        <div class="bg-white rounded-2xl shadow p-6">
+
+            <div class="flex gap-6 items-center">
+
+                <img
+                    id="avatar"
+                    src="https://placehold.co/150"
+                    class="w-32 h-32 rounded-full object-cover"
+                >
+
+                <div>
+
+                    <h1
+                        id="username"
+                        class="text-3xl font-bold"
+                    >
+                    </h1>
+
+                    <p
+                        id="bio"
+                        class="text-gray-600 mt-2"
+                    >
+                    </p>
+
+                    <div class="flex gap-6 mt-4">
+
+                        <span>
+                            Подписчики:
+                            <span id="followers">
+                                0
+                            </span>
+                        </span>
+
+                        <span>
+                            Подписки:
+                            <span id="following">
+                                0
+                            </span>
+                        </span>
+
+                    </div>
+
+                    <button
+                        id="followBtn"
+                        class="bg-blue-500 text-white px-4 py-2 rounded mt-4"
+                    >
+                        Подписаться
+                    </button>
+
+                    <button
+    id="messageBtn"
+    class="bg-green-500 text-white px-4 py-2 rounded mt-2"
+>
+    Сообщение
+</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+            id="postsContainer"
+            class="mt-6 space-y-4"
+        >
+        </div>
+
+    </div>
+
+    <script src="./js/user.js"></script>
+
+</body>
+</html>
