@@ -1,6 +1,6 @@
 const express=require("express");const cors=require("cors");const jwt=require("jsonwebtoken");const pool=require("./db");const {startUserRegisteredConsumer}=require("./events");
 const app=express();app.use(cors());app.use(express.json());
-function auth(q,s,n){try{const t=(q.headers.authorization||"").replace(/^Bearer\\s+/i,"");if(!t)throw Error();q.user=jwt.verify(t,process.env.JWT_SECRET);n();}catch{s.status(401).json({message:"Требуется авторизация"});}}
+function auth(q,s,n){try{const t=(q.headers.authorization||"").replace(/^Bearer\s+/i,"");if(!t)throw Error();q.user=jwt.verify(t,process.env.JWT_SECRET);n();}catch{s.status(401).json({message:"Требуется авторизация"});}}
 app.get("/health",async(q,s)=>{try{await pool.query("SELECT 1");s.json({service:"user-service",status:"ok"});}catch{s.status(503).json({status:"database unavailable"});}});
 app.get("/users/search",async(q,s)=>{try{const r=await pool.query("SELECT user_id AS id,username,avatar,bio FROM profiles WHERE username ILIKE $1 LIMIT 20",["%"+String(q.query.q||"")+"%"]);s.json(r.rows);}catch(e){console.error(e);s.status(500).json({message:"Ошибка сервера"});}});
 app.get("/users/me",auth,async(q,s)=>{try{const r=await pool.query("SELECT user_id AS id,username,avatar,bio FROM profiles WHERE user_id=$1",[q.user.id]);if(!r.rows[0])return s.status(404).json({message:"Профиль не найден"});s.json(r.rows[0]);}catch(e){console.error(e);s.status(500).json({message:"Ошибка сервера"});}});
