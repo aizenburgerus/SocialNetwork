@@ -2,8 +2,8 @@ services:
   rabbitmq:
     image: rabbitmq:3-management
     environment:
-      RABBITMQ_DEFAULT_USER: social_user
-      RABBITMQ_DEFAULT_PASS: local_dev_change_me
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: 72246
     ports: ["5672:5672", "15672:15672"]
 
   auth-db:
